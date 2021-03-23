@@ -1,0 +1,71 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    background: url(rpg.jpg)  no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+}
+.container{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 10px;
+}
+
+.time-box{
+    
+    display: flex;
+    
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.time-box-content{
+    font-size: clamp( 2.0em, 2.0em + 1vw, 4.5em);
+    color: wheat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container > h1{
+    font-size: clamp( 2.0em, 2.0em + 1vw, 3.0em);
+    color: wheat;
+    text-align: center;
+    margin-top: 1em;
+    
+}
+.container > h2{
+    font-size: clamp( 1.2em, 1.2em + 1vw, 2.2em);
+    color: wheat;
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+h2 a{
+    text-decoration: none;
+    color: darkgreen;
+}
+h2 a:visited{
+    color: darkgreen;
+}
+@media screen and (max-width: 1050px){
+    .container{
+        padding-bottom: 1em;
+    }
+    .time-box{
+        width: 100%;
+        display: flex;
+        margin: auto;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    
+}
