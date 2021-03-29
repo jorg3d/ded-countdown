@@ -21,11 +21,13 @@ body{
 }
 
 .time-box{
-    
     display: flex;
-    
     flex-direction: row;
     justify-content: space-around;
+    opacity: 1;
+
+    animation-name: display-animation;
+    animation-duration: 1s;
 }
 
 .time-box-content{
@@ -56,6 +58,13 @@ h2 a{
 h2 a:visited{
     color: darkgreen;
 }
+
+@keyframes display-animation{
+    from {display: none; opacity: 0;}
+    to {display: "flex"; opacity: 1;}
+}
+
+
 @media screen and (max-width: 1050px){
     .container{
         padding-bottom: 1em;
