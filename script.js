@@ -2,13 +2,15 @@ const diasElement = document.getElementById('dias');
 const horasElement = document.getElementById('horas');
 const minutosElement = document.getElementById('minutos');
 const segundosElement = document.getElementById('segundos');
-//const diaDeRpg =  '28 March, 2021 03:00:00';
 
+const diasDeDomingo = [new Date("2021-04-04T18:00:00Z"),
+                       new Date("2021-04-11T18:00:00Z"),
+                       new Date("2021-04-18T18:00:00Z")
+];
+                 
 function contagem(){
     const dataAtual = new Date();
-    //const dataDiaDeRpg = new Date(diaDeRpg);
-    //const dataDiaDeRpg = new Date("24 Mar 2021");
-    const dataDiaDeRpg = new Date("2021-03-28T18:00:00Z");
+    const dataDiaDeRpg = diasDeDomingo[0];
 
 
     const segundosTotais = ((dataDiaDeRpg  - dataAtual) / 1000);
@@ -17,15 +19,32 @@ function contagem(){
     const minutos = Math.floor(segundosTotais / 60) % 60;
     const segundos =  Math.floor(segundosTotais) % 60;
 
-    diasElement.innerHTML = dias;
-    horasElement.innerHTML = horas;
-    minutosElement.innerHTML = minutos;
-    segundosElement.innerHTML = segundos;
+    diasElement.innerHTML = (dias > 0) ? dias : 0;
+    horasElement.innerHTML = (horas > 0) ? horas : 0;
+    minutosElement.innerHTML = (minutos > 0) ? minutos : 0;
+    segundosElement.innerHTML = (segundos > 0) ? segundos : 0;
 
-    //console.log(dataDiaDeRpg - dataAtual);
-
+    aoVivo(dataAtual, dataDiaDeRpg);
 }
 
+function aoVivo(dataAtual, dataInicioSessao){
+    const dataFimSessao = dataInicioSessao.getTime() + 12600000;
+
+    if((dataAtual >= dataInicioSessao) && (dataAtual < dataFimSessao)){
+        document.getElementById("time-box").style.display= "none";
+        document.getElementById("time-box").style.opacity="0";
+        document.getElementById("message").innerHTML = "Estamos ao vivo!"
+    }
+    else{
+        document.getElementById("time-box").style.opacity="1";
+        document.getElementById("time-box").style.display= "flex";
+        document.getElementById("message").innerHTML = "Até a próxima sessão de Donos de Phandalim"
+    }
+    if(dataAtual > dataFimSessao){
+        diasDeDomingo.shift();
+    }
+}
 contagem();
 
 setInterval(contagem, 1000);
+
