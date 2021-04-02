@@ -23,6 +23,8 @@ body{
     align-self: center;
     background-color: rgba(0,0,0,0.4);
     border-radius: 10px;
+    /*color: wheat;*/
+    color: rgb(217, 203, 158);;
 }
 
 .time-box{
@@ -30,38 +32,34 @@ body{
     flex-direction: row;
     justify-content: space-around;
     opacity: 1;
-
     animation-name: display-animation;
     animation-duration: 1s;
 }
 
 .time-box-content{
     font-size: clamp( 2.0em, 2.0em + 1vw, 4.5em);
-    color: wheat;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .container > h1{
     font-size: clamp( 2.0em, 2.0em + 1vw, 3.0em);
-    color: wheat;
     text-align: center;
     margin-top: 1em;
     
 }
 .container > h2{
     font-size: clamp( 1.2em, 1.2em + 1vw, 2.2em);
-    color: wheat;
     text-align: center;
     margin-top: 0.5em;
 }
 
 h2 a{
     text-decoration: none;
-    color: darkgreen;
+    color: rgb(28, 106, 3);
 }
 h2 a:visited{
-    color: darkgreen;
+    color: rgb(28, 106, 3);
 }
 
 
@@ -74,12 +72,17 @@ h2 a:visited{
 .container2 > h1{
     font-size: clamp(2.0em, 2.0em + 1vw, 3.0em);
     text-align: center;
+    color: rgb(24, 26, 28);
 }
 .char-info{
     display: flex;
     flex-direction: row;
     margin-top: 3em;
     text-align: justify;
+}
+
+.char-info:last-child{
+    margin-bottom: 1em;
 }
 
 .char-img{
@@ -101,10 +104,12 @@ h2 a:visited{
 }
 .char-desc h1{
     font-size: clamp(2.0em, 2.0em + 1vw, 3.0em);
+    color: rgb(24, 26, 28);
 }
 .char-desc p{
     margin-top: 1em;
     font-size: clamp(1.0em, 1.0em + 1vw, 2.5em);
+    color: rgb(217, 203, 158);
 }
 
 
@@ -119,6 +124,7 @@ h2 a:visited{
 @media screen and (max-width: 1050px){
     .container{
         padding-bottom: 1em;
+        margin-top: 1em;
     }
     .time-box{
         width: 100%;
