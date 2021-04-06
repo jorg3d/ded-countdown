@@ -3,9 +3,13 @@ const horasElement = document.getElementById('horas');
 const minutosElement = document.getElementById('minutos');
 const segundosElement = document.getElementById('segundos');
 
-const diasDeDomingo = [new Date("2021-04-04T18:00:00Z"),
-                       new Date("2021-04-11T18:00:00Z"),
-                       new Date("2021-04-18T18:00:00Z")
+const diasDeDomingo = [new Date("2021-04-11T18:00:00Z"),
+                       new Date("2021-04-18T18:00:00Z"),
+                       new Date("2021-04-25T18:00:00Z"),
+                       new Date("2021-05-02T18:00:00Z"),
+                       new Date("2021-05-09T18:00:00Z"),
+                       new Date("2021-05-16T18:00:00Z"),
+                       new Date("2021-05-23T18:00:00Z"),
 ];
                  
 function contagem(){
@@ -34,8 +38,12 @@ function aoVivo(dataAtual, dataInicioSessao){
         document.getElementById("time-box").style.display= "none";
         document.getElementById("time-box").style.opacity="0";
         document.getElementById("message").innerHTML = "Estamos ao vivo!"
+        document.getElementById("twitch-embed").style.display="";
+        document.getElementById("container-id").style.width='95%';
+        document.getElementById("twChannel").style.display="none";
     }
     else{
+        document.getElementById("twitch-embed").style.display="none";
         document.getElementById("time-box").style.opacity="1";
         document.getElementById("time-box").style.display= "flex";
         document.getElementById("message").innerHTML = "Até a próxima sessão de Donos de Phandalim"

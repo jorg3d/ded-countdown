@@ -24,8 +24,11 @@ body{
     background-color: rgba(0,0,0,0.2);
     border-radius: 10px;
     color: rgb(2, 26, 22);
+    overflow: hidden;
 }
-
+#twitch-embed{
+    height: 450px;
+}
 .time-box{
     display: flex;
     flex-direction: row;
@@ -46,12 +49,12 @@ body{
     font-size: clamp( 2.0em, 2.0em + 1vw, 3.0em);
     text-align: center;
     margin-top: 1em;
-    
+    margin-bottom: 0.5em;
 }
 .container > h2{
     font-size: clamp( 1.2em, 1.2em + 1vw, 2.2em);
     text-align: center;
-    margin-top: 0.5em;
+    /*margin-top: 0.5em;*/
 }
 
 h2 a{
@@ -159,6 +162,11 @@ h2 a:visited{
     }
 }
 
+@media screen and (min-width: 1051px){
+    #twitch-embed{
+        height: calc(65vh);
+    }
+}
 
 @media screen and (max-width: 1050px){
     .container{

@@ -11,9 +11,9 @@
 </head>
 <body>
     <div class="parent">
-        <div class="container">
+        <div class="container" id="container-id">
+            <div id="twitch-embed"></div>
             <div class="time-box" id="time-box">
-                
                 <div class="time-box-content">
                     <h1 id="dias"></h1>
                     <p>Dias</p>
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <h1 id="message">Até a próxima sessão de Donos de Phandalim</h1>
-            <h2>Disponível em: <a href="https://www.twitch.tv/nunescarol"><br>twitch.tv /nunescarol</a></h2>
+            <h2 id="twChannel">Disponível em: <a href="https://www.twitch.tv/nunescarol"><br>twitch.tv /nunescarol</a></h2>
         </div>
     </div>
     
@@ -95,5 +95,16 @@
         </div>
     </div>
     <script src="script.js"></script>
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+    <script type="text/javascript">
+      new Twitch.Embed("twitch-embed", {
+        width: '100%',
+        height: '100%',
+        channel: "monstercat",
+        layout: 'video'
+      });
+    </script>
 </body>
 </html>
