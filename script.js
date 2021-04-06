@@ -51,7 +51,7 @@ function aoVivo(dataAtual, dataInicioSessao){
     if(dataAtual > dataFimSessao){
         diasDeDomingo.shift();
     }
-    return true;
+    
 }
 contagem();
 
