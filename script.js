@@ -3,7 +3,7 @@ const horasElement = document.getElementById('horas');
 const minutosElement = document.getElementById('minutos');
 const segundosElement = document.getElementById('segundos');
 
-const diasDeDomingo = [new Date("2021-04-11T18:00:00Z"),
+const diasDeDomingo = [new Date("2021-04-06T22:46:00Z"),
                        new Date("2021-04-18T18:00:00Z"),
                        new Date("2021-04-25T18:00:00Z"),
                        new Date("2021-05-02T18:00:00Z"),
@@ -51,6 +51,7 @@ function aoVivo(dataAtual, dataInicioSessao){
     if(dataAtual > dataFimSessao){
         diasDeDomingo.shift();
     }
+    return true;
 }
 contagem();
 
