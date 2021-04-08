@@ -4,7 +4,7 @@
     padding: 0;
 }
 body{
-    background: url(countdown-bg.png)  no-repeat center center fixed;
+    background: url(page-background.jpg)  no-repeat center center fixed;
     background-size: cover;
     display: flex;
     flex-direction: column;
